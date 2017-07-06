@@ -6,13 +6,13 @@ A Docker image based on Ubuntu, serving PHP 7 running as Apache Module. Useful f
 Tags
 -----
 
-* latest: Ubuntu 16.04 (LTS), Apache 2.4, PHP 7.0.4 with support for setting `error_reporting`
+* latest: Ubuntu 16.04 (LTS), Apache 2.4.18 PHP 7.0.18 setting `error_reporting`
 
 Usage
 ------
 
 ```
-$ docker run -d -P bylexus/apache-php7
+$ docker run -d -P liukangxu/apache-php7
 ```
 
 With all the options:
@@ -21,7 +21,7 @@ With all the options:
 $ docker run -d -p 8080:80 \
     -v /home/user/webroot:/var/www \
     -e PHP_ERROR_REPORTING='E_ALL & ~E_STRICT' \
-    bylexus/apache-php7
+    liukangxu/apache-php7
 ```
 
 * `-v [local path]:/var/www` maps the container's webroot to a local path
@@ -47,8 +47,6 @@ Installed packages
 * php7.0-ldap
 * php7.0-mbstring
 * php7.0-mysql
-* php7.0-pgsql
-* php7.0-sqlite3
 * php7.0-xml
 * php7.0-xsl
 * php7.0-zip

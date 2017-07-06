@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Alexander Schenkel <alex@alexi.ch>
+MAINTAINER Kangxu Liu <liukangxu1996@gmail.com>
 
 VOLUME ["/var/www"]
 
@@ -15,12 +15,11 @@ RUN apt-get update && \
       php7.0-ldap \
       php7.0-mbstring \
       php7.0-mysql \
-      php7.0-pgsql \
-      php7.0-sqlite3 \
       php7.0-xml \
       php7.0-xsl \
       php7.0-zip \
-      php7.0-soap
+      php7.0-soap && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY apache_default /etc/apache2/sites-available/000-default.conf
 COPY run /usr/local/bin/run
